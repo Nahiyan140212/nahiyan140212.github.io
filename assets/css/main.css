@@ -388,10 +388,25 @@ ul.social li a:hover {
     margin-bottom: 0.5em;
 }
 
-/* Education Container */
 .education-container {
     max-width: 900px;
     margin: 0 auto;
+    padding: 0 20px;
+}
+
+.education-container .box {
+    margin-bottom: 1.5em; /* Space between entries */
+    padding: 1.5em;
+}
+
+.education-container .box h3 {
+    font-size: 1.5em;
+    color: #3498db; /* Matches your theme */
+}
+
+.education-container .box p {
+    font-size: 1em;
+    line-height: 1.5;
 }
 
 /* Copyright */
