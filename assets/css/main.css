@@ -150,15 +150,32 @@ footer {
     max-width: 900px;
 }
 
-/* Row (Simplified for clarity, keeping responsiveness) */
+/* Row Adjustments */
 .row {
     display: flex;
     flex-wrap: wrap;
     margin: -25px 0 0 -25px;
+    justify-content: flex-start; /* Aligns items to the left */
 }
 
 .row > * {
     padding: 25px 0 0 25px;
+    flex: 1 1 33.33%; /* 3 items per row on large screens */
+    max-width: 33.33%; /* Prevents overflow */
+}
+/* Responsive Adjustments */
+@media screen and (max-width: 980px) {
+    .row > * {
+        flex: 1 1 50%; /* 2 items per row on medium screens */
+        max-width: 50%;
+    }
+}
+
+@media screen and (max-width: 736px) {
+    .row > * {
+        flex: 1 1 100%; /* 1 item per row on small screens */
+        max-width: 100%;
+    }
 }
 
 /* Responsive Grid (Simplified from original) */
@@ -227,30 +244,38 @@ footer {
 .image.fit {
     display: block;
     width: 100%;
+    max-width: 250px; /* Limits the image size */
+    margin: 0 auto; /* Centers the image */
+}
+
+.image.fit img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%; /* Makes it circular */
+    object-fit: cover; /* Ensures proper cropping */
 }
 
 .image.featured {
     margin-bottom: 2em;
 }
 
-/* Box */
-.box {
-    background: #fff;
-    padding: 2em;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+/* Box Adjustments for Projects */
+.box.style2 {
+    padding: 1.5em;
+    text-align: left;
+    min-height: 350px; /* Ensures enough space for content */
 }
 
-.box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+.box.style2 .image.featured {
+    margin: 0 0 1.5em 0;
+    max-height: 150px; /* Limits project image height */
+    overflow: hidden;
 }
 
-.box.style2 .image {
-    margin: -2em 0 2em 0;
+.box.style2 .image.featured img {
+    object-fit: cover;
+    height: 100%;
 }
-
 /* Wrappers */
 .wrapper {
     padding: 6em 0;
