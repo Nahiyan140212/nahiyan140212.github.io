@@ -205,67 +205,83 @@ footer {
     padding: 1.1em 2.2em;
 }
 
-/* Images */
+/* Update project image containers */
+.box.style2 .image.featured {
+    margin: 0 0 1.75em 0;
+    max-height: 160px;
+    height: 160px; /* Fixed height */
+    width: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+    position: relative; /* For absolute positioning of child */
+}
+
+/* Update project images */
+.box.style2 .image.featured img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s ease;
+}
+
+/* Update profile image */
 .image.fit {
     display: block;
-    width: 100%;
-    max-width: 220px;
+    width: 220px;
+    height: 220px; /* Fixed square size */
     margin: 0 auto;
 }
 
 .image.fit img {
     width: 100%;
-    height: auto;
+    height: 100%;
     border-radius: 50%;
     object-fit: cover;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* Boxes */
-.box {
-    background: #fff;
-    padding: 2.5em;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease;
+/* Media icon sizes */
+#Home header div a img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    vertical-align: middle;
 }
 
-.box:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-}
-
-.box.style2 {
-    padding: 2em;
-    text-align: left;
-    min-height: 380px;
-}
-
-.box.style2 .image.featured {
-    margin: 0 0 1.75em 0;
-    max-height: 160px;
+/* Update media section images */
+.box.style1 .image.featured {
+    height: 160px;
+    width: 100%;
     overflow: hidden;
     border-radius: 8px;
+    position: relative;
 }
 
-.box.style2 .image.featured img {
-    object-fit: cover;
+.box.style1 .image.featured img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 100%;
-    transition: transform 0.3s ease;
+    object-fit: cover;
+    object-position: center;
 }
 
-.box.style2:hover .image.featured img {
-    transform: scale(1.05);
-}
-
-.box.style2 h3 {
-    font-size: 1.35em;
-    margin-bottom: 0.75em;
-    color: #1e90ff;
-}
-
-.box.style2 p {
-    font-size: 0.95em;
+/* For mobile */
+@media screen and (max-width: 736px) {
+    .image.fit {
+        width: 180px;
+        height: 180px;
+    }
+    
+    .box.style2 .image.featured,
+    .box.style1 .image.featured {
+        height: 140px;
+    }
 }
 
 /* Wrappers */
